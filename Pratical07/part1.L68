@@ -1,0 +1,35 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 12/01/2022 16:21:18
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :
+00000000                             3  * Written by :
+00000000                             4  * Date       :
+00000000                             5  * Description:
+00000000                             6  *-----------------------------------------------------------
+00001000                             7      ORG    $1000
+00001000                             8  START:                 
+00001000                             9  
+00001000  123C 0009                 10      MOVE.B #9,D1 #Gives D1 the value of 9
+00001004  1401                      11      MOVE.B D1,D2 #Carrys the value of D1 and sets D2 to match it
+00001006  11C1 044C                 12      MOVE.B D1,1100 #Moves the contents of D1 to the location 1100
+0000100A  1438 044C                 13      MOVE.B 1100,D2 #Moves the content of 1100 to D2
+0000100E  11F8 044C 0064            14      MOVE.B 1100,100 #Moves the contents of 1100 to 100
+00001014                            15  
+00001014                            16  
+00001014                            17  
+00001014  FFFF FFFF                 18      SIMHALT          
+00001018                            19  
+00001018                            20  
+00001018                            21  
+00001018                            22      END    START
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               1000
