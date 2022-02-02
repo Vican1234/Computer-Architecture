@@ -1,0 +1,46 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 02/02/2022 16:30:24
+
+00001000                             1      ORG    $1000
+00001000                             2  START:
+00001000  43F9 00001038              3      LEA startText, A1
+00001006  303C 000E                  4      MOVE #14,D0
+0000100A  4E4F                       5      TRAP #15
+0000100C  303C 0004                  6      MOVE #4,D0
+00001010  320A                       7      MOVE A2,D1
+00001012                             8      
+00001012  43F9 000010AF              9      LEA loopText, A1
+00001018  303C 000E                 10      MOVE #14,D0
+0000101C  4E4F                      11      TRAP #15
+0000101E  303C 0004                 12      MOVE #4,D0
+00001022  340A                      13      MOVE A2,D2
+00001024                            14  
+00001024  B642                      15      CMP D2,D3
+Line 16 ERROR: Undefined symbol
+00001026  6700 ACEE                 16      BEQ EXIT
+0000102A  5243                      17      ADD #1,D3
+0000102C  C2C1                      18      MULU D1,D1
+Line 19 ERROR: Invalid opcode
+0000102E                            19      EXIT
+0000102E                            20       
+0000102E  303C 000E                 21      MOVE #14,D0
+00001032  4E4F                      22      TRAP #15
+00001034                            23  
+00001034                            24  
+00001034  FFFF FFFF                 25      SIMHALT
+00001038= 54 68 69 73 20 70 ...     26  startText dc.b 'This program will allow you to find the a number to power but of which from user input, at prompt please enter a number'
+000010AF= 48 6F 77 20 6D 61 ...     27  loopText dc.b 'How many times would you like to repeat', 0
+000010D7                            28  
+000010D7                            29      END    START
+
+2 errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+LOOPTEXT            10AF
+START               1000
+STARTTEXT           1038
